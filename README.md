@@ -39,6 +39,7 @@ This dataset provides key variables for training a machine learning model to pre
 #### This builds a docker application which trains the model and then starts up a web service (FastAPI).
 
 ```sh
+pipenv install
 docker build -t electricity_price . --no-cache
 docker run -p 8000:8000 electricity_price
 ```
