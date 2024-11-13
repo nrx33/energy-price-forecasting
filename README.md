@@ -102,6 +102,18 @@ Would you like to make another prediction? (y/n): n
 ```
 Note: Make sure the web service is running first and run the command from root project directory.
 
+## File Structure
+
+- `Dockerfile` - Defines the setup for the Docker container to run the project in a consistent environment.
+- `Pipfile` - Specifies project dependencies and Python version.
+- `Pipfile.lock` - A lock file that ensures the project dependencies are consistent across environments.
+- `data/energy_complete.csv` - The dataset used for this project.
+- `README.md` - Provides necessary information about the project, including setup instructions and usage details.
+- `notebook.ipynb` - Python notebook for exploratory data analysis (EDA), model training, and saving the best machine learning model.
+- `train.py` - Code for training various machine learning models, selecting the best model, tuning it, and saving it for future use.
+- `test.py` - A script to interact with the web service for testing purposes.
+- `predict.py` - Contains the script to load the trained machine learning model and make predictions. This file also includes the FastAPI code for deploying the web service.
+
 ## Background
 
 - **FastAPI**: FastAPI is a modern, fast (high-performance) web framework for building APIs with Python. It is designed to be easy to use and highly performant, leveraging asynchronous programming and type hints to provide faster response times and easier code maintenance. FastAPI is widely used for building RESTful APIs due to its automatic documentation generation and support for both synchronous and asynchronous request handling.
