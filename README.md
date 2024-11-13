@@ -34,8 +34,12 @@ This dataset provides key variables for training a machine learning model to pre
 - **Docker**: for containerization and deployment
 - **IPykernel**: for Jupyter notebook support in the development environment
 
-## Project Setup
+## Video Instructions
+* [Project Setup & Demo](https://www.loom.com/share/73c16b244a11457abea52af7ef6e8152?sid=323d0932-ea2e-45cf-9fbe-5a07b1b52405)
 
+## Text Insturctions
+
+### Project Setup
 #### This builds a docker application which trains the model and then starts up a web service (FastAPI).
 
 ```sh
@@ -43,15 +47,13 @@ pipenv install
 docker build -t electricity_price . --no-cache
 docker run -p 8000:8000 electricity_price
 ```
+Run the commands in the root directory of the project. It may take some time to see an output so dont think its stuck, the output is shown only after the final model has been trained and saved to a file. Also make sure port 8000 is not in use or the above commands may fail.
 
-#### Note: Run the commands in the root directory of the project. It may take some time to see an output so dont think its stuck, the output is shown only after the final model has been trained and saved to a file. Also make sure port 8000 is not in use or the above commands may fail.
 
+### Web service test (FastAPI)
 
-## Web service test (FastAPI)
-
-### Test API call using curl
-
-#### If you want to quickly test if the web service is working or not you can run the following command in your command line. 
+#### Test API call using curl
+If you want to quickly test if the web service is working or not you can run the following command in your command line. 
 
 ```sh
 curl -X POST "http://127.0.0.1:8000/predict" \
@@ -69,17 +71,16 @@ curl -X POST "http://127.0.0.1:8000/predict" \
     "school_day": 1
   }'
 ```
-#### Note: Make sure the web service is running first.
+Note: Make sure the web service is running first.
 
-### Test API call using command line interface
-
-#### If you want a more intuitive method of testing the web service you can run the following script. It will give you a command line interface so you can test the web service.
+#### Test API call using command line interface
+If you want a more intuitive method of testing the web service you can run the following script. It will give you a command line interface so you can test the web service.
 
 ```sh
 pipenv run python test.py
 ```
 
-#### A successful run should look like this.
+A successful run should look like this.
 
 ```sh
 === Regional Reference Price (RRP) Prediction Interface ===
@@ -99,8 +100,7 @@ Predicted RRP: $57.87
 
 Would you like to make another prediction? (y/n): n
 ```
-
-#### Note: Make sure the web service is running first and run the command from root project directory.
+Note: Make sure the web service is running first and run the command from root project directory.
 
 ## Background
 
